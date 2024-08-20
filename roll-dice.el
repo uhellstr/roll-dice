@@ -90,6 +90,7 @@
     total))
 
 (defun roll-dice-run()
+  "Simulate the roll of dice(s) based on tabletop RPG format, '2d6+3'."
    (interactive)
    (roll-dice-get-dice)
    (message "The result of the dice role [%s] is : %d"  *my-dice-role* (roll-dices *my-dice-role*)))
