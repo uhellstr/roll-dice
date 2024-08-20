@@ -51,8 +51,13 @@
 ;;
 ;;
 ;;; Code:
+;;;
 
 (provide 'roll-dice)
+
+(define-derived-mode roll-dice fundamental-mode "roll-dice-run"
+  "Major mode for roll playing roll-dice.")
+
 
 ;; Prompt for a doce role
 (setq *my-dice-role* nil)
@@ -60,7 +65,8 @@
   "Prompt user for dice(s) and eventual bonus."
   (setq *my-dice-role* (read-string "Dice(s) to role [+bonus] : ")))
 
-(defun roll-dice (input)
+;; Roll one or more dices and add eventual bonuses.
+(defun roll-dices (input)
   "Simulate the roll of dice(s) based on the input string
    in tabletop RPG format, '2d6+3'."
   (let ((total 0)
@@ -83,11 +89,11 @@
         (setq total (+ total (string-to-number part)))))
     total))
 
-(defun roll-dice-roll()
+(defun roll-dice-run()
    (interactive)
    (roll-dice-get-dice)
-   (message "The result of the dice role [%s] is : %d"  *my-dice-role* (roll-dice *my-dice-role*)))
+   (message "The result of the dice role [%s] is : %d"  *my-dice-role* (roll-dices *my-dice-role*)))
 
-(add-hook 'roll-dice-hook 'roll-dice-roll)
+(add-hook 'roll-dice-mode-hook 'roll-dice-run)
 
 ;;; roll-dice.el ends here
