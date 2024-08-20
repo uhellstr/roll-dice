@@ -3,12 +3,17 @@
 ;; Copyright (C) 2022-2024  Free Software Foundation, Inc.
 ;;
 ;;
+;;           _ _        _ _
+;;  _ _ ___| | |___ __| (_)__ ___
+;; | '_/ _ \ | |___/ _` | / _/ -_)
+;; |_| \___/_|_|   \__,_|_\__\___|
+;;
 ;; Author: Ulf Hellström <oraminute@gmail.com> Epico Tech
 ;; Maintainer: Ulf Hellström <oraminute@gmail.com>
 ;; Created: augusti, 05, 2024
 ;; Modified:
 ;; Version: 1.0
-;; Keywords: languages lisp
+;; Keywords: languages lisp elisp
 ;; Homepage: https://github.com/uhellstr
 ;; Package-Requires: ((emacs "28.1"))
 ;;
@@ -42,13 +47,19 @@
 ;;
 ;;  Example usage:
 ;;
-;;  - (roll_dice "d4")          // Rolls a single 4 sided dice and return the sum.
-;;  - (roll_dice "2d6")         // Rolls two six-sided dice and returns their sum.
-;;  - (roll_dice "3d4+1")       // Rolls three four-sided dice, sums the results, and adds 1.
-;;  - (roll_dice "1d6+1d4+2")   // Rolls 1d6 and 1d4, sums the result and then add 2 to the sum.
+;;  - d4          // Rolls a single 4 sided dice and return the sum.
+;;  - 2d6         // Rolls two six-sided dice and returns their sum.
+;;  - 3d4+1       // Rolls three four-sided dice, sums the results, and adds 1.
+;;  - 1d6+1d4+2   // Rolls 1d6 and 1d4, sums the result and then add 2 to the sum.
 ;;
 ;;  Description
 ;;
+;;  Setup this package by adding the following to your emacs configuration file.
+;;
+;;  (add-to-list 'load-path "<your-path>/roll-dice")
+;;  (require 'roll-dice)
+;;
+;;  Restart emacs and then use M-x roll-dice-run to get a prompt for entering dice rolls as described above.
 ;;
 ;;; Code:
 ;;;
