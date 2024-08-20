@@ -23,7 +23,12 @@ Then restart emacs.
 To call the dice roller use.
 
 M-x roll-dice-run 
+
 You will be prompted for the dice roll you want to performe.
+
+Allowed sides on dices (except bonuses)
+
+4,6,8,10,12,20,100
 
 Examples of rolls you can call
 
