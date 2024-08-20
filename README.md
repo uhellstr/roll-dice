@@ -1,12 +1,24 @@
 # roll-dice
 Simple D&amp;D dice roller package for Emacs.
 
+Clone this github repo to a path where you store none MELPA packages.
+
 Put the following line in your emacs configuration file.
 
 ```
+(add-to-list 'load-path "<your-path>/roll-dice")
 (require 'roll-dice)
 ```
+Example:
+
+```
+(add-to-list 'load-path "~/Documents/emacs-packages/roll-dice")
+(require 'roll-dice)
+```
+
 Then restart emacs.
+
+## Usage:
 
 To call the dice roller use.
 
